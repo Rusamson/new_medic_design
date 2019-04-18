@@ -19,6 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/style11.css" /><!-- menu style sheet -->
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="css/timepicki.css" rel="stylesheet">
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
@@ -62,12 +63,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--	<input  class="name" type="text" name="Patient Name" placeholder="Patient Name" required=""/> 
 		<input type="text" name="Number" placeholder="Number" required=""/>
 		<input class="name" type="email" name="Email" placeholder="Email" required=""/>-->
-		<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="mm/dd/yyyy" required="">
 		<select class="form-control name" placeholder="Profession">
-			<option>LPN</option>
+			<option>Categorie : </option>
 			<option>RN</option>
 			<option>PAB</option> 
+			<option>Any</option> 
 		</select> 
+		<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="Date :" required="">
+ 		<input id="timepicker1" type="text" name="timepicker1" placeholder="From :"/>
+ 		<input id="timepicker2" type="text" name="timepicker2" placeholder="To :"/>
 		<input  class="name" type="text" name="message" placeholder="Message (optional)"/> 
 		 <input type="submit" value="Reserver">
 	</form>
@@ -124,5 +128,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--js for bootstrap working-->
 	<script src="js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
+<script src="js/timepicki.js"></script>
+<script>
+	$('#timepicker1, #timepicker2').timepicki();
+
+ setInterval(function(){ 
+ 	var currentDate = $('#datepicker1').val(); 
+    currentDate = currentDate.replace('Date :','');
+    var currentFrom = $('#timepicker1').val(); 
+    currentFrom = currentFrom.replace('From :','');
+    var currentTo = $('#timepicker2').val(); 
+    currentTo = currentTo.replace('To :','');
+     $('#datepicker1').val("Date :"+currentDate) ; 
+ 	 $('#timepicker1').val("From :"+currentFrom) ; 
+ 	 $('#timepicker2').val("To :"+currentTo) ; 
+  }, 3000);
+</script>
+
 </body>
 </html>
