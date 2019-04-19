@@ -59,20 +59,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="form-agileits">
 	<h3>Faites une Reservation</h3>
 	<p>*Pour une reservation instantanee: Veuillez ometre la date de reservation</p>
-	<form action="#" method="post">
-	<!--	<input  class="name" type="text" name="Patient Name" placeholder="Patient Name" required=""/> 
-		<input type="text" name="Number" placeholder="Number" required=""/>
-		<input class="name" type="email" name="Email" placeholder="Email" required=""/>-->
-		<select class="form-control name" placeholder="Profession">
+	<form action="#" method="post"> 
+		<input type="text" name="hospital" placeholder="Hospital Name :" required=""/>
+		<input type="text" name="category" placeholder="Categorie (e.g LPN) :" required=""/>
+		<input type="text" name="subCategory" placeholder="SubCategorie (e.g C-3) :" required=""/>
+	<!--<select class="form-control name" placeholder="Profession">
 			<option>Categorie : </option>
 			<option>RN</option>
 			<option>PAB</option> 
 			<option>Any</option> 
-		</select> 
+		</select> -->
 		<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="Date :" required="">
  		<input id="timepicker1" type="text" name="timepicker1" placeholder="From :"/>
  		<input id="timepicker2" type="text" name="timepicker2" placeholder="To :"/>
-		<input  class="name" type="text" name="message" placeholder="Message (optional)"/> 
+		<input  class="name" type="text" name="message" placeholder="Message (optional) :"/> 
 		 <input type="submit" value="Reserver">
 	</form>
 	</div>
